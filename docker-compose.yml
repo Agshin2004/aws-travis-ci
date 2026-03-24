@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+    web:
+        build: 
+            context: .
+            dockerfile: Dockerfile.dev
+        ports: 
+            - "3000:3000"
+        volumes:
+            - /app/node_modules # do not try to map host node_modules but use its own
+            - .:/app  # sync
+    tests:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        volumes:
+            - /app/node_modules # do not try to map host node_modules but use its own
+            - .:/app  # sync
+
