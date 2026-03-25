@@ -17,4 +17,6 @@ services:
         volumes:
             - /app/node_modules # do not try to map host node_modules but use its own
             - .:/app  # sync
+        
+        command: ["npm", "run", "test"]  # overriding default
 
