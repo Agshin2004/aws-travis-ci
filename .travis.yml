@@ -5,6 +5,5 @@ services:
 before_install:
   - docker build -t agshin2004/aws-travis-ci -f Dockerfile.dev .
 
-
 script:
   - docker run -e CI=true agshin2004/aws-travis-ci npm run test -- --coverage
